@@ -9,7 +9,7 @@ from paraview.simple import *
 paraview.simple._DisableFirstRenderCameraReset()
 
 # create a new 'PLY Reader'
-modelply = PLYReader(FileNames=['C:\\Users\\Ritika\\Documents\\GitHub\\rbf-brain\\model.ply'])
+modelply = PLYReader(FileNames=['model.ply'])
 
 # get active view
 renderView1 = GetActiveViewOrCreate('RenderView')
@@ -623,7 +623,7 @@ Hide(modelply, renderView1)
 renderView1.Update()
 
 # save data
-SaveData('C:/Users/Ritika/Documents/GitHub/rbf-brain/model.stl', proxy=extractSurface1, FileType='Ascii',
+SaveData('model.stl', proxy=extractSurface1, FileType='Ascii',
     WriteTimeSteps=0)
 
 #### saving camera placements for all active views

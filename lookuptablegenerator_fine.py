@@ -1,5 +1,5 @@
 fmorphed = open('fine_mesh_morphed.vtk', 'r') #need a generic name here like mesh.vtk
-foriginal = open('centroid.txt', 'r')
+foriginal = open('centroid_fine.txt', 'r')
 waste = fmorphed.readline()
 waste = fmorphed.readline()
 waste = fmorphed.readline()
@@ -31,28 +31,7 @@ for i in range(0, vertices-2, 3):
     nodes[i+2][0] = V
     nodes[i+2][1] = W
     nodes[i+2][2] = X
-if(lastline==0):
-    text = fmorphed.readline()
-    p,q,r,s,t,u,v,w,x,y = text.split(" ")
-    P = float(p)
-    Q = float(q)
-    R = float(r)
-    S = float(s)
-    T = float(t)
-    U = float(u)
-    V = float(v)
-    W = float(w)
-    X = float(x)
-    nodes[vertices-3][0] = P
-    nodes[vertices-3][1] = Q
-    nodes[vertices-3][2] = R
-    nodes[vertices-2][0] = S
-    nodes[vertices-2][1] = T
-    nodes[vertices-2][2] = U
-    nodes[vertices-1][0] = V
-    nodes[vertices-1][1] = W
-    nodes[vertices-1][2] = X
-elif(lastline==1):
+if(lastline==1):
     text = fmorphed.readline()
     p,q,r,s = text.split(" ")
     P = float(p)
@@ -76,6 +55,7 @@ elif(lastline==2):
     nodes[vertices-1][0] = S
     nodes[vertices-1][1] = T
     nodes[vertices-1][2] = U
+waste = fmorphed.readline()
 text = fmorphed.readline()
 a, b, c = text.split(" ")
 cells = int(b)

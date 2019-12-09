@@ -1,5 +1,5 @@
 fmorphed = open('coarse_mesh_morphed.vtk', 'r') #need a generic name here like mesh.vtk
-foriginal = open('centroid.txt', 'r')
+foriginal = open('centroid_coarse.txt', 'r')
 waste = fmorphed.readline()
 waste = fmorphed.readline()
 waste = fmorphed.readline()
