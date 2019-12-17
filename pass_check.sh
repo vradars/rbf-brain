@@ -93,4 +93,8 @@ target_file_size4=964983
          echo "Target File2 Size = "$target_file_size2" " >> ~/$repo.FAILED
          echo "Acutal File3 Size = "$myfilesize3" " >> ~/$repo.FAILED
          echo "Target File3 Size = "$target_file_size3" " >> ~/$repo.FAILED
+         echo "Acutal File4 Size = "$myfilesize4" " >> ~/$repo.FAILED
+         echo "Target File4 Size = "$target_file_size4" " >> ~/$repo.FAILED
+         echo "Acutal File5 Size = "$myfilesize5" " >> ~/$repo.FAILED
+         echo "Target File5 Size = "$target_file_size5" " >> ~/$repo.FAILED
  fi
