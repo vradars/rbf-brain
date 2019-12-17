@@ -9,7 +9,7 @@ target_file_size1=2090800
 
 # file 2
 file2=parameters.prm
-target_file_size1=1780
+target_file_size2=1780
 
 
 
@@ -17,18 +17,30 @@ target_file_size1=1780
 
 # You shoud not have to modify below
 #
-myfilesize=$(wc -c <"$file")
-echo Acutal File Size = "$myfilesize"
-echo Target File Size = "$target_file_size"
+myfilesize1=$(wc -c <"$file1")
+echo Acutal File1 Size = "$myfilesize1"
+echo Target File1 Size = "$target_file_size1"
 
-if [ $myfilesize -ge $target_file_size ];then
+myfilesize2=$(wc -c <"$file1")
+echo Acutal File2 Size = "$myfilesize2"
+echo Target File2 Size = "$target_file_size2"
+
+all_pass = 0
+if [ $myfilesize1 -ge $target_file_size1 ];then
+        all_pass = 1
+else
+        all_pass - 0
+fi
+
+
+if [ $all_pass -ge 1 ];then
         echo Passed!
         echo "Passed" >> ~/$repo.PASSED
-        echo "Acutal File Size = "$myfilesize" " >> ~/$repo.PASSED
-        echo "Target File Size = "$target_file_size" " >> ~/$repo.PASSED
 else
         echo Failed!
         echo "Failed!" >> ~/$repo.FAILED
-        echo "Acutal File Size = "$myfilesize" " >> ~/$repo.FAILED
-        echo "Target File Size = "$target_file_size" " >> ~/$repo.FAILED
+        echo "Acutal File1 Size = "$myfilesize1" " >> ~/$repo.FAILED
+        echo "Target File1 Size = "$target_file_size1" " >> ~/$repo.FAILED
+        echo "Acutal File2 Size = "$myfilesize2" " >> ~/$repo.FAILED
+        echo "Target File2 Size = "$target_file_size2" " >> ~/$repo.FAILED
 fi
