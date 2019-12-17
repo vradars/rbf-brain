@@ -15,6 +15,10 @@ target_file_size2=1780
 file3=coarse_mesh_morphed.vtk
 target_file_size3=1403053
 
+# file 4
+file4=coarse_mesh_morphed.inp
+target_file_size4=1691542
+
 # You shoud not have to modify below
 #
  myfilesize1=$(wc -c <"$file1")
@@ -29,24 +33,39 @@ target_file_size3=1403053
  echo Acutal File3 Size = "$myfilesize3"
  echo Target File3 Size = "$target_file_size3"
  
+ myfilesize4=$(wc -c <"$file4")
+ echo Acutal File4 Size = "$myfilesize4"
+ echo Target File4 Size = "$target_file_size4"
+ 
  declare -i myint=0
+ # check file 1
  if [ $myfilesize1 -ge $target_file_size1 ];then
          declare -i myint=1
  else
          declare -i myint=0
  fi
+ 
  # check file 2
  if [ $myfilesize2 -ge $target_file_size2 ];then
          declare -i myint=1
  else
          declare -i myint=0
  fi
+ 
  # check file 3
  if [ $myfilesize3 -ge $target_file_size3 ];then
          declare -i myint=1
  else
          declare -i myint=0
  fi
+ 
+  # check file 4
+ if [ $myfilesize4 -ge $target_file_size4 ];then
+         declare -i myint=1
+ else
+         declare -i myint=0
+ fi
+ 
  if [ $myint -ge 1 ];then
          echo Passed!
          echo "Passed" >> ~/$repo.PASSED
