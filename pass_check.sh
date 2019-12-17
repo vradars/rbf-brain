@@ -2,7 +2,7 @@
 
 # Add file and the target file size below
 repo=PyGem
-file=tutorials/finalmesh.vtk
+file=tutorials/brain.vtk
 target_file_size=9275500
 
 
