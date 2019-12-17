@@ -19,6 +19,10 @@ target_file_size3=1403053
 file4=coarse_mesh_morphed.inp
 target_file_size4=1691542
 
+# file 5
+file4=centroidtable_coarse.txt
+target_file_size4=964983  
+
 # You shoud not have to modify below
 #
  myfilesize1=$(wc -c <"$file1")
@@ -36,6 +40,10 @@ target_file_size4=1691542
  myfilesize4=$(wc -c <"$file4")
  echo Acutal File4 Size = "$myfilesize4"
  echo Target File4 Size = "$target_file_size4"
+ 
+ myfilesize5=$(wc -c <"$file5")
+ echo Acutal File5 Size = "$myfilesize5"
+ echo Target File5 Size = "$target_file_size5"
  
  declare -i myint=0
  # check file 1
@@ -61,6 +69,13 @@ target_file_size4=1691542
  
   # check file 4
  if [ $myfilesize4 -ge $target_file_size4 ];then
+         declare -i myint=1
+ else
+         declare -i myint=0
+ fi
+ 
+   # check file 5
+ if [ $myfilesize5 -ge $target_file_size5 ];then
          declare -i myint=1
  else
          declare -i myint=0
