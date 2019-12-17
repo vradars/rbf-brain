@@ -11,6 +11,9 @@ target_file_size1=2090800
 file2=parameters.prm
 target_file_size2=1780
 
+# file 3
+file3=coarse_mesh_morphed.vtk
+target_file_size3=1403053
 
 # You shoud not have to modify below
 #
@@ -22,13 +25,24 @@ target_file_size2=1780
  echo Acutal File2 Size = "$myfilesize2"
  echo Target File2 Size = "$target_file_size2"
  
+ myfilesize3=$(wc -c <"$file3")
+ echo Acutal File3 Size = "$myfilesize3"
+ echo Target File3 Size = "$target_file_size3"
+ 
  declare -i myint=0
  if [ $myfilesize1 -ge $target_file_size1 ];then
          declare -i myint=1
  else
          declare -i myint=0
  fi
+ # check file 2
  if [ $myfilesize2 -ge $target_file_size2 ];then
+         declare -i myint=1
+ else
+         declare -i myint=0
+ fi
+ # check file 3
+ if [ $myfilesize3 -ge $target_file_size3 ];then
          declare -i myint=1
  else
          declare -i myint=0
@@ -43,4 +57,6 @@ target_file_size2=1780
          echo "Target File1 Size = "$target_file_size1" " >> ~/$repo.FAILED
          echo "Acutal File2 Size = "$myfilesize2" " >> ~/$repo.FAILED
          echo "Target File2 Size = "$target_file_size2" " >> ~/$repo.FAILED
+         echo "Acutal File3 Size = "$myfilesize3" " >> ~/$repo.FAILED
+         echo "Target File3 Size = "$target_file_size3" " >> ~/$repo.FAILED
  fi
