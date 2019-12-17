@@ -1,9 +1,18 @@
 #!/bin/bash
 
 # Add file and the target file size below
-repo=PyGem
-file=tutorials/brain.vtk
-target_file_size=9275500
+repo=rbf-brain
+
+# file 1
+file1=model.stl
+target_file_size1=2090800
+
+# file 2
+file2=parameters.prm
+target_file_size1=1780
+
+
+
 
 
 # You shoud not have to modify below
