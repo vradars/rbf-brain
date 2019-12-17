@@ -25,15 +25,19 @@ myfilesize2=$(wc -c <"$file1")
 echo Acutal File2 Size = "$myfilesize2"
 echo Target File2 Size = "$target_file_size2"
 
-all_pass = 0
+all_pass=0
 if [ $myfilesize1 -ge $target_file_size1 ];then
         all_pass = 1
 else
         all_pass - 0
 fi
+if [ $myfilesize2 -ge $target_file_size2 ];then
+        all_pass = 1
+else
+        all_pass - 0
+fi
 
-
-if [ $all_pass -ge 1 ];then
+if [ all_pass -ge 1 ];then
         echo Passed!
         echo "Passed" >> ~/$repo.PASSED
 else
