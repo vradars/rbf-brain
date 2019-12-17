@@ -3,7 +3,7 @@
 # Add file and the target file size below
 repo=PyGem
 file=tutorials/finalmesh.vtk
-target_file_size=19833374
+target_file_size=9275500
 
 
 # You shoud not have to modify below
