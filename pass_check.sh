@@ -20,8 +20,8 @@ file4=coarse_mesh_morphed.inp
 target_file_size4=1691542
 
 # file 5
-file4=centroidtable_coarse.txt
-target_file_size4=964983  
+file5=centroidtable_coarse.txt
+target_file_size5=964983  
 
 # You shoud not have to modify below
 #
