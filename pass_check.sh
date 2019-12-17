@@ -21,7 +21,7 @@ myfilesize1=$(wc -c <"$file1")
 echo Acutal File1 Size = "$myfilesize1"
 echo Target File1 Size = "$target_file_size1"
 
-myfilesize2=$(wc -c <"$file1")
+myfilesize2=$(wc -c <"$file2")
 echo Acutal File2 Size = "$myfilesize2"
 echo Target File2 Size = "$target_file_size2"
 
