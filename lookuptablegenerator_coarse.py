@@ -9,22 +9,23 @@ import argparse
 parser = argparse.ArgumentParser(description='A Utility package to generate centroid text data from Coarse Mesh Morphed VTK')
 parser.add_argument('--input', default=None, type=str, help="Path to your Morphed Mesh VTK")
 parser.add_argument('--output', default=None, type=str, help="Path to save your Centroid Table Text Data");
-
+parser.add_argument('--centroid', defualt=None, type=str, help="Path to your centroid Text file");
 args = parser.parse_args()
 
 #########################################################
 
 # If arguments are invalid or none then exit the script with error !
 
-if (args.input  == None or args.output == None):
+if (args.input  == None or args.output == None or args.centroid == None):
     parser.print_help()
     sys.exit(0)
 
 morphed_mesh_vtk_file_path = args.input
 centroid_table_text_file_path = args.output
+centroid_coarse_text_file_path = args.centroid
 
 fmorphed = open(morphed_mesh_vtk_file_path, 'r') #need a generic name here like mesh.vtk
-foriginal = open('centroid_coarse.txt', 'r')
+foriginal = open(centroid_coarse_text_file_path, 'r')
 waste = fmorphed.readline()
 waste = fmorphed.readline()
 waste = fmorphed.readline()
